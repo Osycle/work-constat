@@ -58,10 +58,13 @@ $header-min-menu: 70px;
 	height: $header-top-height; 
 	display: flex;
 	padding-top: 40px;
-	align-items: flex-start;
-	flex-wrap: wrap;
+	align-items: flex-start;	
 	overflow: hidden;
+	justify-content: space-between;
 	color: white;
+	*{
+		white-space: normal;
+	}
 }
 .header-top, .header-bottom{
 	transform: inherit;transform: unset;
@@ -93,34 +96,43 @@ $header-min-menu: 70px;
 	.header-top{
 		transform-origin: 50% 0;
 	}
-	.header-bottom-logo{
-		transform: scale(0);
-		transition: all 0.5s ease; 	
-	}
 	.header-bottom{
 		.align-i-center{
 			top: 0;
 			transition: all 0.5s ease; 	
 		}
 	}
-
+	.header-lang{
+		transition: all 0.8s ease;
+	}
+	.header-logo{
+		img{
+			position: relative;
+		}
+	}
 	.header-top, .header-bottom, .header-top-content, .header-logo img{
 		transition: all 0.5s ease; 	
 	}
 	&.scrolled, &.header-pages{
-		.header-bottom-logo{
-			transform: scale(1);
-		}
 		.header-top{
-			box-shadow: 0px 5px 20px -10px black;
-			padding-bottom: 0;
+			background-color: $color-2;
 		}
-		.header-under{
-			top: -60px;
+		.header-logo{
+			img{
+				top: -13px;
+				width: 80px;
+			}
+		}
+		.header-lang{
+			margin-top: 10px;
+		}
+		.menu{
+			position: relative;
+			margin-top: 10px;
 		}
 		.header-top-content{
-			height: 0;
-			padding: 0;
+			height: 100px;
+			padding-top: 30px;
 		}
 		.header-bottom{
 			box-shadow: 0px 5px 20px -10px black;
@@ -132,6 +144,35 @@ $header-min-menu: 70px;
 	}
 }
 
+.header-lang{
+	width: 50px;
+	.hide-list{
+		position: absolute;
+		opacity: 0;
+		li{
+			margin: 5px 0;
+		}
+	}
+	#langlist{
+		&:checked{
+			&~.hide-list{
+				opacity: 1;
+			}
+		}
+	}
+	img{
+		border-radius: 50%;
+		width: 20px;
+		height: 20px;
+	}
+}
+.header-info{
+	min-width: 250px;
+	.phone{
+		font-family: $font-family-3;
+		font-size: em(24, 15);
+	}
+}
 .socicons{
 	font-size: 20px;
 	li{
@@ -171,12 +212,10 @@ $header-min-menu: 70px;
 	font-size: 0.9em;
 	color: $color-1;
 	nav{
-		white-space: nowrap;
-		height: 100%;
+		
 	}
 	ul:not([class*="sub-menu"]){
 		height: 100%;
-		text-transform: uppercase;
 	  justify-content: space-between;
 		@extend .letter-none;
 		& > li{
@@ -187,7 +226,7 @@ $header-min-menu: 70px;
 			& > a{
 				height: 100%;
 				display: block;
-				padding: 0 15px;
+				padding: 0 10px;
 				position: relative;
 				display: flex;
     		
@@ -196,7 +235,7 @@ $header-min-menu: 70px;
 				background-color: $color-1;
 			}
 			&:hover{
-				background-color: $color-1;
+				color: white;
 				a{
 					border-color: $color-1;
 				}

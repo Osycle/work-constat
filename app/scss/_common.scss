@@ -5,7 +5,7 @@
 */
 
 $color-1: #c99e77 !default;
-$color-2: #059dab !default;
+$color-2: #0a122c !default;
 $color-3: #2a2a2a !default;
 $color-4: #e00579 !default;
 $color-5: #65a328 !default;
@@ -13,7 +13,7 @@ $color-special-1: #2e1c11;
 
 $font-family-1: "Open Sans";
 $font-family-2: "Playfair Display";
-$font-family-3: "sans-serif";
+$font-family-3: "Lora";
 
 $color-scroll: $color-1;
 $color-footer: #0071BC;
@@ -610,13 +610,14 @@ table {
 .btn-opacity{
 	@extend .btn-style;
 	background-color: transparent;
-	border: 1px solid currentColor;
-	color: $color-1;
+	border: 1px solid $color-1;
+	border-radius: 10px;
+	color: white;
+	box-shadow: 0 0 10px -1px $color-1;
 	transition: all 0.3s ease-in-out;
 	a{
 		transition: none !important;
 	}
-	box-shadow: inset 0 0 0px black, 0px 0px 0px 0px darken(white, 12%), 0px 0px 0px 0px $color-2;
 	&:hover{
 		border-color: $color-2;
 	}
@@ -864,6 +865,16 @@ thined{
 		}
 	}
 }
+.h1-style-1{
+	&:before{
+		@extend .clafclear;
+		background-image: url('../img/other/h-line.png');
+		background-position: center;
+		background-size: cover;
+		height: 1px;
+		width: 100vh;
+	}
+}
 h1,h2,h3,h4,h5{
 	color: inherit;
 	line-height: 140%;
@@ -873,35 +884,39 @@ h1,h2,h3,h4,h5{
 h1, h2, h3, h4{
 	margin-top: 10px;
 	margin-bottom: 10px;
-	font-weight: 600;
+	font-weight: 500;
 	position: relative;	
 }
 h1{
-	@extend .h1-style;
-	font-size: em(40, 15);
+	font-size: em(48, 15);
+	color: $color-1;
 	margin-bottom: 15px;
-	font-weight: 700;
+	font-weight: 500;
+
 	@media (max-width: 991px) {
 		font-size: em(40/1.2, 15);
 	}
+
+  /* W3C Markup */ 
+  // background: linear-gradient(to top right, red 0%, green 100%);
+  // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='red', endColorstr='green',GradientType=1 );
+  // -webkit-background-clip: text;
+  // -webkit-text-fill-color: transparent;
 }
 h2{
 	font-size: em(25, 15);
 	margin-bottom: 15px;
-	font-weight: 700;
 	@media (max-width: 430px) {
 		font-size: em(25/1.2, 15);
 	}
 } 
 h3{
-	font-weight: 600;
-	font-size: em(22, 15);
+	font-size: em(20, 15);
 	@media (max-width: 430px) {
 		font-size: em(22/1.1, 15);
 	}
 }
 h4{
-	font-weight: 700;
 	font-size: em(17, 15);
 }
 h5{	
@@ -952,7 +967,7 @@ main{
 	overflow: hidden;
 	//min-height: 300px;
 	z-index: 1;
-	color: #343434;
+	color: white;
 	@extend .list-style-1;
 	@media (max-width: 991px){
 		text-align: center ;
@@ -962,7 +977,6 @@ main{
 		font-size: 1em;
 		//font-weight: 400;
 		position: relative;
-		line-height: 170%;
 	}
 	ul:not([class]){
 		text-align: left;

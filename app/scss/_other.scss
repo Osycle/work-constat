@@ -157,7 +157,7 @@ html{
 .flickity-btn-1{
 
 	.flickity-prev-next-button{
-		background-color: $color-1;
+		background-color: transparent;
 		transition: all 0.3s ease;
 		top: 50%;
 		width: 40px;
@@ -166,13 +166,12 @@ html{
 		border-radius: 0;
 		&:hover, &:focus{
 			opacity: 1;
-			background-color: $color-2;
 			.arrow{
-				//fill: $color-1;
+				fill: $color-1;
 			}
 		}
 		&:active{
-			transform: translateY(-40%);
+			//transform: translateY(-40%);
 		}
 		.arrow{
 			fill: white;
@@ -244,8 +243,8 @@ html{
 		background-color: rgba(white, 1);
 		opacity: 1;
 		border-radius: 50%;
-  	width: 20px;
-  	height: 20px;
+  	width: 10px;
+  	height: 10px;
 		&.is-selected{
 			transform: scale(1);
 			background-color: $color-1;
