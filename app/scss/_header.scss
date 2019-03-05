@@ -45,7 +45,6 @@ $header-min-menu: 70px;
 	}
 }
 .header-offset{
-	background-color: #212121;
 	height: $header-top-height+$header-bottom-height;
 	@media (max-width: 991px) {
 		display: none;
@@ -115,7 +114,8 @@ $header-min-menu: 70px;
 	}
 	&.scrolled, &.header-pages{
 		.header-top{
-			background-color: $color-2;
+			background-color: lighten($color-2, 1%);
+			//box-shadow:  0 2px 5px -2px $color-1;
 		}
 		.header-logo{
 			img{
@@ -403,7 +403,7 @@ ul[class*="sub-menu"]{
 	z-index: 100;
 	color: white;
 	box-shadow: 0 0 20px 0 black;
-	background-color: #333333;
+	background-color: $color-2;
 	.min-menu-logo{
 		padding: 12px 0;
 		width: 100%;
@@ -442,6 +442,9 @@ ul[class*="sub-menu"]{
 
 
 // ---MM-MENU---
+.mm-menu.mm-theme-dark{
+	background: $color-2;
+}
 .mm-navbar{
 	.close-btn{
 		width: 35px;

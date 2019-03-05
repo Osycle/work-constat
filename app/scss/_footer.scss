@@ -12,11 +12,12 @@
 	position: relative;
 	//min-height: 150px;
 	line-height: 170%;
-	background-repeat: repeat;
-	background-position-y: top;
+	overflow: hidden;
+	background-repeat: no-repeat;
+	
 	//background-size: cover;
 	color: white;
-	//background-image: url('../img/bg/bg-footer.jpg');
+	background-position: center 150px;
 	&:before{
 		font-size: 150px;
 		position: absolute;
@@ -25,13 +26,13 @@
 	h1{
 		border-left: 0;
 	}
+	@media (min-width: 991px) {
+		background-image: url('../img/other/light.png');
+	}
 }
 .footer-content{
 	padding-top: 30px;
-	padding-bottom: 30px;
 	.container{
-		border-bottom: 3px solid white;
-		padding-bottom: 30px;
 
 	}
 	.ls-icon-placeholder{
@@ -52,30 +53,14 @@
 		}
 	}
 }
-.footer-contacts{
-	.fa{
-		color: $color-1;
-		width: 35px;
-	}
-	.fa-phone{
-		font-size: 28px;
-	}
-	.fa-envelope{
-		font-size: 25px;	
-	}
-	.fa-map-marker{
-		font-size: 35px;
-	}
-	@media (max-width: 991px) {
-		.flex.align-i-center{
-    	flex-direction: column;
-		}
-	}
-}
 
 .footer-logo{
+	text-align: center;
 	img{
-		width: 252px;
+		width: 140px;
+	}
+	@media (max-width: 991px) {
+		display: none;
 	}
 }
 .footer-socicons{
@@ -114,24 +99,19 @@
 	}
 }
 
-
-.phone-info{
-	font-family: $font-family-2;
-	.fa{
-		font-size: 25px;
+.footer-feedback{
+	.form-footer{
+		margin-top: 30px;
 	}
-	small{
-		color: $color-1;
-	}
-	big{
-		font-weight: 600;
-		color: white;
-		font-size: 2em;
+	@media (min-width: 991px) {
+		.form-footer{
+			margin-top: 75px;	
+		}
 	}
 }
 
+
 .copy-content{
-	background-color: #2a2a2a;
 	padding-bottom: 30px;
 }
 .dev{

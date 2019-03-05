@@ -34,7 +34,6 @@
 }
 
 
-
 .fa-star{
 	color: $color-gray-1;
 	&.fill{
@@ -53,6 +52,9 @@
 	p{
 		font-size: em(24, 15);
 		line-height: 170%;
+	}
+	@media (max-width: 991px) {
+		font-size: em(12, 15);
 	}
 }
 
@@ -511,5 +513,55 @@ figcaption{
 	.owl-dots{
 		margin-top: 20px;
 		justify-content: center;
+	}
+	@media (max-width: 991px) {
+		.img-content{
+			text-align: center;
+		}
+		.img{
+			margin: 30px auto;
+
+		}
+	}
+}
+
+
+
+
+//about
+.about{
+	padding-bottom: 30px;
+}
+.about-gallery-items{
+	.img-content{
+		transition: all 0.3s ease;
+		overflow: hidden;
+	}
+	.img{
+		height: 280px;
+		transition: all 0.3s ease;
+		background-size: cover;
+		background-position: center;
+	}
+
+	.cell-hover{
+		background-color: rgba($color-2, 0.75);
+		transition: all 0.3s ease;
+	}
+	figure{
+		transition: all 0.3s ease;
+		&:hover{
+			z-index: 2;
+			transform: scale(1.1);
+			.cell-hover{
+				border-radius: 30px;
+				border: 1px solid $color-1;
+			}
+			.img{
+				border-radius: 30px;
+				border: 1px solid $color-1;
+				//transform: scale(1.1);
+			}
+		}
 	}
 }
