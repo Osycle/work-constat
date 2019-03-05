@@ -160,8 +160,8 @@ html{
 		background-color: transparent;
 		transition: all 0.3s ease;
 		top: 50%;
-		width: 40px;
-		height: 40px;
+		width: 35px;
+		height: 35px;
 		z-index:2;
 		border-radius: 0;
 		&:hover, &:focus{
@@ -185,9 +185,10 @@ html{
 			height: 100%;
 			display: flex;
 			align-items: center;
-			transform: scale(0.4);
+			//transform: scale(0.4);
 			path{
-				transform: scale(0.2);
+				transform: scale(3);
+				transform-origin: 0 -1px;
 			}
 		}
 		&.previous{
@@ -196,7 +197,7 @@ html{
 		&.next{
 			right: 15px;
 			svg{
-				transform: scale(0.4) rotate(180deg);
+				transform: rotate(180deg);
 			}
 		}
 		@media (max-width: 991px) {
@@ -558,7 +559,7 @@ div.owl-nav{
 	}
 }
 .owl-prev{
-	margin-right: 5px;
+	margin-right: 10px;
 }
 .owl-nav{
 	text-align: right;
@@ -566,21 +567,33 @@ div.owl-nav{
 .owl-btn{
 	svg{
 		display: block;
-		background-color: $color-1;
-		width: 50px;
-		height: 50px;
+		width: 40px;
+		height: 40px;
 		//display: inline-block;
 	}
 	.arrow{
 		fill: white;
-		transform: scale(0.08);
-    transform-origin: 32% 32%;
+		transform: scale(3);
+    transform-origin: 0 -1px;
 	}
 	&.next{
 		svg{
 			transform: rotate(180deg);
 		}
 	}
+	&:hover{
+		.arrow{
+			fill: $color-1;
+		}
+	}
 }
 
 
+
+.owl-dot-1{
+	.owl-dot{
+		background-color: white;
+		width: 10px;
+    height: 10px;
+	}
+}

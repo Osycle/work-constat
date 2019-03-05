@@ -4,7 +4,7 @@
 		--Variables--
 */
 
-$color-1: #c99e77 !default;
+$color-1: #dab094 !default; //#c99e77
 $color-2: #0a122c !default;
 $color-3: #2a2a2a !default;
 $color-4: #e00579 !default;
@@ -536,7 +536,6 @@ table {
 	display: inline-block;
 	white-space: nowrap;
 	text-align: center;	
-	text-transform: uppercase;
 	font-weight: 600;
 	font-family: $font-family-1;
 	&.text-wrap{
@@ -579,6 +578,7 @@ table {
 	@extend .btn-style;
 	@extend .hover-style-1;
 	//transition: box-shadow 0.1s steps(4);
+	border-radius: 15px;
 	*{
 		color: inherit;
 	}
@@ -738,9 +738,10 @@ body{
 	//color: white;
 	//height: auto;
 	background-color: white;
-	background-image: url('../img/bg/bg-body-article.jpg');
-	background-repeat: repeat-y;
-	background-position: center 0;
+	background-image: url('../img/bg/bg-footer.jpg');
+	background-repeat: no-repeat;
+	background-color: $color-2;
+	background-position: center bottom;
 	
 }
 
@@ -865,15 +866,26 @@ thined{
 		}
 	}
 }
-.h1-style-1{
-	&:before{
+.h-style-1{
+	display: inline-block;
+	position: relative;
+	&:before, &:after{
 		@extend .clafclear;
-		background-image: url('../img/other/h-line.png');
-		background-position: center;
-		background-size: cover;
-		height: 1px;
-		width: 100vh;
+		background-color: $color-1;
+		height: 2px;
+		top: 50%;
+		width: 100vw;
+		transform: translateY(-50%);
 	}
+	&:before{
+		background: linear-gradient(to right, $color-1 80%, transparent 90%);
+		right: 100%;
+	}
+	&:after{
+		background: linear-gradient(to right, transparent 10%, $color-1 20%);
+		left: 100%;
+	}
+
 }
 h1,h2,h3,h4,h5{
 	color: inherit;
@@ -918,6 +930,7 @@ h3{
 }
 h4{
 	font-size: em(17, 15);
+	text-transform: uppercase;
 }
 h5{	
 	line-height: 150%;
@@ -925,27 +938,7 @@ h5{
 	font-size: em(14, 15);
 }
 
-.h-style-1{
-	&:after, &:before{
-		@extend .claf;
-		height: 3px;
-		top: inherit;
-		bottom: -10px;
-	}
-	&:before{
-		background-color: $color-gray-1;
-	}
-	&:after{
-		width: 38px;
-		background-color: $color-2;
-	}
-	@media (max-width:991px){
-		&:after{
-			transform: translateX(-50%);
-			left: 50%;
-		}
-	}
-}
+
 blockquote{
 	padding: 0 15px 0 35px;
 	border-left: 8px solid;
@@ -976,6 +969,7 @@ main{
 	p{
 		font-size: 1em;
 		//font-weight: 400;
+		line-height: 150%;
 		position: relative;
 	}
 	ul:not([class]){
@@ -1061,14 +1055,32 @@ hr{
 }
 
 .pie-form-control{
-	border: 1px solid rgba($color-1, 0.8);
-	//border-bottom-color: white;
-	background-color: $color-gray-1;
+	border: 0;
+	border-bottom: 3px solid $color-1;
+	background-color: transparent;
 	&:not([class*='color-']){
 		color: inherit;
 		color: currentColor;
 	}
-	@include placeholder-color($color-gray-2);
+	$color: $color-gray-2;
+	&::-moz-placeholder { 
+		color: $color;
+		opacity: 1; 
+		font-weight: 600;
+	}
+	&:-ms-input-placeholder { 
+		color:$color;
+		font-weight: 600;
+	}
+	&::-webkit-input-placeholder { 
+		color: $color;
+		font-weight: 600;
+	}
+	&::-ms-expand { 
+		border: 0;
+		font-weight: 600;
+		background-color: transparent; 
+	}
 	&:focus, &:active{
 		outline: none;
 	}
@@ -1078,7 +1090,7 @@ input.pie-form-control{
 	height: 50px;
 	padding: 5px 12px;
 	box-shadow: inset 1px 3px 25px -13px black;
-	border-color: $color-gray-1;
+	border-bottom: 2px solid $color-1;
 	&[type="checkbox"]{
 		height: auto;
 		margin-top: 0;

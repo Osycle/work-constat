@@ -10,13 +10,12 @@
 
 #footer{
 	position: relative;
-	//color: rgba(black, 0.4);
 	//min-height: 150px;
 	line-height: 170%;
 	background-repeat: repeat;
 	background-position-y: top;
 	//background-size: cover;
-	background-color: #2a2a2a;
+	color: white;
 	//background-image: url('../img/bg/bg-footer.jpg');
 	&:before{
 		font-size: 150px;
@@ -26,7 +25,6 @@
 	h1{
 		border-left: 0;
 	}
-	color: $color-gray-3;
 }
 .footer-content{
 	padding-top: 30px;
@@ -81,17 +79,13 @@
 	}
 }
 .footer-socicons{
-	font-size: 20px;
+	font-size: 25px;
 	li{
 		display: inline-block;
 		transition: all 0.3s ease;
 		text-align: center;
-		margin-left: 5px;
-		border: 1px solid $color-gray-2;
-		color: $color-gray-2;
-		border-radius: 50%;
-		width: 35px;
-		height: 35px;
+		margin-left: 15px;
+		color: $color-1;
 		&:nth-child(1){
 			margin-left: 0;
 		}
@@ -106,8 +100,6 @@
 		&:hover{
 			border-color: $color-1;
 			color: white;
-			background-color: $color-1;
-			box-shadow: 0 0 20px 0 $color-1;
 		}
 	}
 	.fa-paper-plane{
